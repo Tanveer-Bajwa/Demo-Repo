@@ -24,6 +24,7 @@ const connect  = mongoose.connect("mongodb://127.0.0.1:27017/bookDatabase", {
 if(connect) console.log("Database Connected ~");
 if(!connect) console.log("Database error: ");
 
+//this is apis 
 //app.use("/api", authenticate)
 app.use("/book", bookRouter);
 app.use("/SignUp", SignUpRouter);
@@ -35,18 +36,6 @@ app.use("/transaction",transactionRouter);
 app.use("/history",historyRouter);
 app.use("/upload",IconRouter, express.static("public"));
 
-// async function fn1() {
-//   console.log("Calling Async")
-//   try {
-//     console.log("Calling Async")
-//   //  const connection =  await mongoose.connect('mongodb://127.0.0.1:27017/bookDatabase');
-//     // if(connection) console.log("Database Connected...")
-//   } catch (error) {
-//     console.log(error)
-//     handleError(error);
-//   }
-// }
-// fn1();
-// const connection = mongoose.connection;
+
 
 app.listen(9999);
